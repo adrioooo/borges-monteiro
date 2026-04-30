@@ -90,7 +90,7 @@ export default function Accueil() {
         }} />
 
         {/* Gradient overlays */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(8,8,8,.75) 0%, rgba(8,8,8,.25) 50%, rgba(8,8,8,.05) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(100deg, rgba(8,8,8,.88) 0%, rgba(8,8,8,.6) 40%, rgba(8,8,8,.1) 100%)" }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "25%", background: "linear-gradient(to top, #0a0a0a, transparent)" }} />
 
         {/* Yellow accent bar */}
@@ -112,13 +112,13 @@ export default function Accueil() {
           </div>
 
           {/* Title */}
-          <h1 style={{ fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900, lineHeight: .95, letterSpacing: "-.03em", marginBottom: 28, maxWidth: 760 }}>
+          <h1 style={{ fontSize: "clamp(3rem,8vw,6rem)", fontWeight: 900, lineHeight: .95, letterSpacing: "-.03em", marginBottom: 28, maxWidth: 760, textShadow: "0 2px 20px rgba(0,0,0,.6)" }}>
             <span style={{ display: "block", color: "#fff" }}>Contrôle</span>
             <span style={{ display: "block", color: "#FFD200" }}>électrique</span>
-            <span style={{ display: "block", color: "rgba(255,255,255,.75)", fontSize: ".55em", fontWeight: 700, letterSpacing: "-.01em", marginTop: 8 }}>certifié OIBT en Suisse</span>
+            <span style={{ display: "block", color: "rgba(255,255,255,.85)", fontSize: ".55em", fontWeight: 700, letterSpacing: "-.01em", marginTop: 8 }}>certifié OIBT en Suisse</span>
           </h1>
 
-          <p style={{ color: "rgba(255,255,255,.55)", fontSize: "clamp(1rem,2vw,1.1rem)", lineHeight: 1.8, maxWidth: 500, marginBottom: 44 }}>
+          <p style={{ color: "rgba(255,255,255,.9)", fontSize: "clamp(1rem,2vw,1.1rem)", lineHeight: 1.8, maxWidth: 500, marginBottom: 44, textShadow: "0 1px 12px rgba(0,0,0,.5)" }}>
             Sécurité, conformité et rigueur — rapport officiel certifié à chaque intervention en Suisse romande.
           </p>
 
