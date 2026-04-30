@@ -86,12 +86,12 @@ export default function Accueil() {
           backgroundPosition: "center 40%",
           transform: "scale(1.04)",
           transition: "transform 8s ease",
-          filter: "brightness(.7)",
+          filter: "brightness(.9)",
         }} />
 
         {/* Gradient overlays */}
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(8,8,8,.82) 0%, rgba(8,8,8,.4) 55%, rgba(8,8,8,.1) 100%)" }} />
-        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "30%", background: "linear-gradient(to top, #0a0a0a, transparent)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(8,8,8,.75) 0%, rgba(8,8,8,.25) 50%, rgba(8,8,8,.05) 100%)" }} />
+        <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "25%", background: "linear-gradient(to top, #0a0a0a, transparent)" }} />
 
         {/* Yellow accent bar */}
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: "linear-gradient(to bottom, transparent, #FFD200 30%, #FFD200 70%, transparent)" }} />
