@@ -11,9 +11,16 @@ function Footer() {
   return (
     <footer style={{ background: "#060606", borderTop: "1px solid rgba(255,255,255,.05)", padding: "clamp(24px,3vw,36px) clamp(20px,4vw,48px)" }}>
       <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        <div>
-          <div style={{ fontWeight: 800, fontSize: ".95rem", letterSpacing: ".18em", color: "#fff", textTransform: "uppercase" }}>BORGES MONTEIRO</div>
-          <div style={{ fontSize: ".48rem", letterSpacing: ".3em", color: "#FFD200", textTransform: "uppercase", marginTop: 3 }}>CONTRÔLE ÉLECTRIQUE</div>
+        {/* Logo footer */}
+        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", lineHeight: 1 }}>
+            <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "1.7rem", color: "#fff", letterSpacing: "-.02em" }}>BM</span>
+            <div style={{ width: 3, height: "1.8rem", marginLeft: 4, borderRadius: 2, background: "linear-gradient(to bottom, #E63946, #8b1c26)", flexShrink: 0 }} />
+          </div>
+          <div>
+            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: ".72rem", letterSpacing: ".18em", color: "#fff", textTransform: "uppercase" }}>BORGES MONTEIRO</div>
+            <div style={{ fontSize: ".45rem", letterSpacing: ".22em", color: "rgba(255,255,255,.35)", textTransform: "uppercase", marginTop: 2 }}>CONTRÔLE ÉLECTRIQUE</div>
+          </div>
         </div>
         <div style={{ display: "flex", gap: 24 }}>
           {[["/","Accueil"],["/services","Services"],["/contact","Contact"]].map(([path, label]) => (
@@ -50,7 +57,7 @@ function Layout() {
   return (
     <div style={{ fontFamily: "'DM Sans','Segoe UI',sans-serif", background: "#0a0a0a", color: "#fff", minHeight: "100vh", overflowX: "hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800;900&family=Rajdhani:wght@700&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { background: #0a0a0a; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
         ::-webkit-scrollbar { width: 4px; }
