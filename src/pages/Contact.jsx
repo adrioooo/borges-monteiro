@@ -26,9 +26,13 @@ const InfoIcon = ({ id }) => {
   }
 };
 
+const FORMSPREE_ID = "YOUR_FORM_ID"; // 👉 Remplacer après création sur formspree.io
+
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", property: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -37,11 +41,33 @@ export default function Contact() {
     return () => clearTimeout(t);
   }, []);
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    setSent(true);
-    setForm({ name: "", email: "", phone: "", service: "", property: "", message: "" });
-    setTimeout(() => setSent(false), 6000);
+    setLoading(true);
+    setError(false);
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          Nom: form.name,
+          Email: form.email,
+          Téléphone: form.phone || "—",
+          Service: form.service || "—",
+          "Type de bien": form.property || "—",
+          Message: form.message,
+        }),
+      });
+      if (res.ok) {
+        setSent(true);
+        setForm({ name: "", email: "", phone: "", service: "", property: "", message: "" });
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    }
+    setLoading(false);
   };
 
   const INFOS = [
@@ -183,15 +209,21 @@ export default function Contact() {
                     onFocus={onFocus} onBlur={onBlur} />
                 </div>
 
-                <button type="submit" style={{
-                  width: "100%", background: "#FFD200", color: "#0a0a0a",
+                {error && (
+                  <div style={{ background: "rgba(230,57,70,.1)", border: "1px solid rgba(230,57,70,.3)", borderRadius: 8, padding: "12px 16px", fontSize: ".84rem", color: "#ff6b6b", textAlign: "center" }}>
+                    Une erreur est survenue. Réessayez ou contactez-nous par téléphone.
+                  </div>
+                )}
+
+                <button type="submit" disabled={loading} style={{
+                  width: "100%", background: loading ? "rgba(255,210,0,.6)" : "#FFD200", color: "#0a0a0a",
                   border: "none", padding: "16px", borderRadius: 9, marginTop: 4,
                   fontFamily: "inherit", fontWeight: 800, fontSize: ".86rem",
-                  cursor: "pointer", letterSpacing: ".08em", textTransform: "uppercase", transition: "all .25s",
+                  cursor: loading ? "not-allowed" : "pointer", letterSpacing: ".08em", textTransform: "uppercase", transition: "all .25s",
                 }}
-                  onMouseOver={e => { e.currentTarget.style.background = "#ffe033"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,210,0,.3)"; }}
-                  onMouseOut={e => { e.currentTarget.style.background = "#FFD200"; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
-                >Envoyer ma demande →</button>
+                  onMouseOver={e => { if (!loading) { e.currentTarget.style.background = "#ffe033"; e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(255,210,0,.3)"; } }}
+                  onMouseOut={e => { e.currentTarget.style.background = loading ? "rgba(255,210,0,.6)" : "#FFD200"; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+                >{loading ? "Envoi en cours…" : "Envoyer ma demande →"}</button>
 
                 <p style={{ textAlign: "center", color: "rgba(255,255,255,.15)", fontSize: ".68rem", marginTop: 2 }}>
                   Données confidentielles · Réponse sous 24h · Sans engagement
