@@ -72,7 +72,7 @@ export default function Contact() {
 
   const INFOS = [
     { ic: "phone", lb: "Téléphone",           val: "+41 78 239 23 90",        href: "tel:+41782392390" },
-    { ic: "mail",  lb: "Email",                val: "info@borges-monteiro.ch", href: "mailto:info@borges-monteiro.ch" },
+    { ic: "mail",  lb: "Email",                val: "contact@bm-controle.ch", href: "mailto:contact@bm-controle.ch" },
     { ic: "pin",   lb: "Zone d'intervention",  val: "Toute la Suisse romande" },
     { ic: "time",  lb: "Horaires",             val: "Lun – Ven · 8h00 – 18h00" },
   ];
