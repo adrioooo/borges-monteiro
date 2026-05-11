@@ -170,6 +170,18 @@ export default function Accueil() {
         </div>
       </section>
 
+      {/* ══ NOS SERVICES INTRO ══ */}
+      <section style={{ padding: "clamp(56px,8vw,96px) clamp(20px,4vw,48px)", background: "#0a0a0a", borderBottom: "1px solid rgba(255,255,255,.04)" }}>
+        <Reveal>
+          <div style={{ maxWidth: 780, margin: "0 auto", textAlign: "center" }}>
+            <div style={{ display: "inline-block", color: "#FFD200", fontSize: ".67rem", fontWeight: 700, letterSpacing: ".2em", textTransform: "uppercase", padding: "5px 16px", border: "1px solid rgba(255,210,0,.2)", borderRadius: 20, marginBottom: 24 }}>Nos services</div>
+            <p style={{ fontSize: "clamp(1.05rem,2.2vw,1.3rem)", color: "rgba(255,255,255,.62)", lineHeight: 1.85, fontWeight: 400, letterSpacing: "-.01em" }}>
+              Nous accompagnons particuliers, propriétaires, régies et entreprises pour tous les besoins liés au contrôle électrique et à la conformité des installations.
+            </p>
+          </div>
+        </Reveal>
+      </section>
+
       {/* ══ POURQUOI NOUS ══ */}
       <section style={{ padding: "clamp(72px,10vw,120px) clamp(20px,4vw,48px)", background: "#0a0a0a" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto" }}>
