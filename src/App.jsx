@@ -5,7 +5,6 @@ import Navbar from "./components/Navbar";
 import Accueil from "./pages/Accueil";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
-import logoImg from "./assets/image.png";
 
 function Footer() {
   const location = useLocation();
@@ -15,7 +14,7 @@ function Footer() {
       <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
         <NavLink to="/">
           <img
-            src={logoImg}
+            src="/logo.png"
             alt="Borges Monteiro"
             style={{ height: 44, width: "auto", mixBlendMode: "screen", display: "block" }}
           />

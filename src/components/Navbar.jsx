@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import logoImg from "../assets/image.png";
 
 function Logo() {
   return (
     <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
       <img
-        src={logoImg}
+        src="/logo.png"
         alt="Borges Monteiro"
         style={{
           height: "clamp(40px, 5.5vw, 56px)",
