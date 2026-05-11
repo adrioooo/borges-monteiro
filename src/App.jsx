@@ -1,9 +1,11 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Accueil from "./pages/Accueil";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
+import logoImg from "./assets/image.png";
 
 function Footer() {
   const location = useLocation();
@@ -11,17 +13,13 @@ function Footer() {
   return (
     <footer style={{ background: "#060606", borderTop: "1px solid rgba(255,255,255,.05)", padding: "clamp(24px,3vw,36px) clamp(20px,4vw,48px)" }}>
       <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        {/* Logo footer */}
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ display: "flex", alignItems: "center", lineHeight: 1 }}>
-            <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "1.7rem", color: "#fff", letterSpacing: "-.02em" }}>BM</span>
-            <div style={{ width: 3, height: "1.8rem", marginLeft: 4, borderRadius: 2, background: "linear-gradient(to bottom, #E63946, #8b1c26)", flexShrink: 0 }} />
-          </div>
-          <div>
-            <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: ".72rem", letterSpacing: ".18em", color: "#fff", textTransform: "uppercase" }}>BORGES MONTEIRO</div>
-            <div style={{ fontSize: ".45rem", letterSpacing: ".22em", color: "rgba(255,255,255,.35)", textTransform: "uppercase", marginTop: 2 }}>CONTRÔLE ÉLECTRIQUE</div>
-          </div>
-        </div>
+        <NavLink to="/">
+          <img
+            src={logoImg}
+            alt="Borges Monteiro"
+            style={{ height: 44, width: "auto", mixBlendMode: "screen", display: "block" }}
+          />
+        </NavLink>
         <div style={{ display: "flex", gap: 24 }}>
           {[["/","Accueil"],["/services","Services"],["/contact","Contact"]].map(([path, label]) => (
             <a key={path} href={path} style={{ color: location.pathname === path ? "#FFD200" : "rgba(255,255,255,.3)", fontSize: ".82rem", textDecoration: "none", transition: "color .2s" }}

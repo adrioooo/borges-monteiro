@@ -22,40 +22,73 @@ function Reveal({ children, delay = 0 }) {
   );
 }
 
+function ServiceIcon({ num }) {
+  const base = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "#FFD200", strokeWidth: 1.6, strokeLinecap: "round", strokeLinejoin: "round" };
+  switch (num) {
+    case "01": return (
+      <svg {...base}>
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+      </svg>
+    );
+    case "02": return (
+      <svg {...base}>
+        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/>
+        <path d="M9 22V12h6v10"/>
+      </svg>
+    );
+    case "03": return (
+      <svg {...base}>
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/>
+        <path d="M14 2v6h6M9 15l2 2 4-4"/>
+      </svg>
+    );
+    default: return (
+      <svg {...base}>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/>
+      </svg>
+    );
+  }
+}
+
 const SERVICES = [
   {
-    num: "01", icon: "⚡",
+    num: "01",
     title: "Contrôle périodique OIBT",
     tag: "Obligation légale",
-    desc: "Vérification complète de votre installation électrique pour détecter anomalies, usures et non-conformités. Rapport officiel détaillé inclus.",
+    desc: "Le contrôle périodique OIBT est une obligation légale visant à garantir la sécurité des installations électriques dans le temps. Il concerne aussi bien les habitations privées que les bâtiments commerciaux ou industriels.",
+    desc2: "Nous effectuons une vérification complète de votre installation afin de détecter toute anomalie ou usure pouvant représenter un danger. À l'issue du contrôle, vous recevez un rapport détaillé ainsi que les recommandations nécessaires pour une mise en conformité.",
     for: "Propriétaires · Gérances · Entreprises",
     goal: "Prévenir les risques et respecter les obligations légales",
     details: ["Vérification visuelle complète", "Tests de mesure normalisés", "Rapport OIBT officiel", "Recommandations incluses"],
   },
   {
-    num: "02", icon: "🏗️",
+    num: "02",
     title: "Contrôle final",
     tag: "Après travaux",
-    desc: "Vérifie que vos travaux sont conformes aux normes OIBT avant mise en service. Attestation officielle délivrée sur place.",
-    for: "Constructions · Rénovations",
+    desc: "Le contrôle final intervient à la fin de travaux électriques, avant la mise en service de l'installation. Il permet de vérifier que tous les travaux ont été réalisés conformément aux normes en vigueur.",
+    desc2: "Nous contrôlons l'ensemble des éléments installés afin de garantir leur bon fonctionnement et leur sécurité. Une attestation de conformité est délivrée après validation.",
+    for: "Nouvelles constructions · Rénovations",
     goal: "Assurer une mise en service conforme et sécurisée",
     details: ["Contrôle post-installation", "Validation des travaux", "Attestation de conformité", "Mise en service autorisée"],
   },
   {
-    num: "03", icon: "🧾",
+    num: "03",
     title: "Contrôle de réception",
     tag: "Indépendant",
-    desc: "Contrôle neutre et objectif de l'installation, indépendant de l'installateur. Validité officielle garantie.",
+    desc: "Le contrôle de réception est réalisé indépendamment de l'installateur, afin de garantir une vérification neutre et objective de l'installation électrique.",
+    desc2: "Ce contrôle est souvent exigé pour certains types de bâtiments ou installations. Il permet d'assurer que tout est conforme avant validation officielle.",
     for: "Maîtres d'ouvrage · Promoteurs",
     goal: "Garantir une conformité indépendante",
     details: ["Organisme tiers indépendant", "Rapport objectif certifié", "Sans conflit d'intérêt", "Valide pour les autorités"],
   },
   {
-    num: "04", icon: "🔧",
-    title: "Conseil conformité",
+    num: "04",
+    title: "Conseil pour mise en conformité",
     tag: "Sur mesure",
-    desc: "Solutions claires et adaptées pour corriger les défauts. Nos experts vous guident vers les meilleures options de mise en conformité.",
-    for: "Installations non conformes",
+    desc: "En cas de non-conformité, nous vous accompagnons avec des solutions claires et adaptées pour corriger les défauts relevés.",
+    desc2: "Nous vous expliquons les travaux nécessaires et vous orientons vers les meilleures options pour sécuriser votre installation tout en optimisant les coûts.",
+    for: "Installations anciennes ou non conformes",
     goal: "Sécuriser et régulariser votre installation",
     details: ["Analyse des défauts", "Plan de correction", "Priorisation des travaux", "Suivi jusqu'à conformité"],
   },
@@ -85,68 +118,72 @@ export default function Services() {
       {/* ══ HEADER ══ */}
       <section style={{
         background: "linear-gradient(180deg, #111 0%, #0a0a0a 100%)",
-        padding: "clamp(48px,8vw,90px) clamp(20px,4vw,48px)",
+        padding: "clamp(56px,9vw,100px) clamp(20px,4vw,48px)",
         borderBottom: "1px solid rgba(255,255,255,.06)",
         position: "relative", overflow: "hidden",
       }}>
-        {/* Grid bg */}
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px)", backgroundSize: "60px 60px", pointerEvents: "none" }} />
-        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 4, background: "linear-gradient(to bottom, transparent, #FFD200 30%, #FFD200 70%, transparent)" }} />
+        <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px)", backgroundSize: "60px 60px", pointerEvents: "none" }} />
+        <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: "linear-gradient(to bottom, transparent, #FFD200 25%, #FFD200 75%, transparent)" }} />
 
         <div style={{
           maxWidth: 1140, margin: "0 auto", position: "relative",
           opacity: loaded ? 1 : 0, transform: loaded ? "none" : "translateY(24px)",
           transition: "all .7s ease",
         }}>
-          <div style={{ color: "#FFD200", fontSize: ".7rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 16 }}>Nos prestations</div>
-          <h1 style={{ fontSize: "clamp(2.5rem,7vw,5rem)", fontWeight: 900, letterSpacing: "-.03em", color: "#fff", lineHeight: .95, marginBottom: 20 }}>
+          <div style={{ display: "inline-block", color: "#FFD200", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 20, padding: "4px 14px", border: "1px solid rgba(255,210,0,.2)", borderRadius: 20 }}>Nos prestations</div>
+          <h1 style={{ fontSize: "clamp(2.8rem,7.5vw,5.5rem)", fontWeight: 900, letterSpacing: "-.03em", color: "#fff", lineHeight: .93, marginBottom: 22 }}>
             Des contrôles pour<br /><span style={{ color: "#FFD200" }}>chaque situation</span>
           </h1>
-          <p style={{ color: "rgba(255,255,255,.45)", fontSize: "clamp(.9rem,1.8vw,1.05rem)", maxWidth: 540, lineHeight: 1.8 }}>
+          <p style={{ color: "rgba(255,255,255,.4)", fontSize: "clamp(.9rem,1.8vw,1.05rem)", maxWidth: 520, lineHeight: 1.8 }}>
             Chaque type d'installation a ses exigences. Nos experts interviennent selon vos besoins et les normes légales suisses.
           </p>
         </div>
       </section>
 
       {/* ══ CARDS ══ */}
-      <section style={{ padding: "clamp(48px,8vw,90px) clamp(20px,4vw,48px)", background: "#0a0a0a" }}>
+      <section style={{ padding: "clamp(56px,9vw,100px) clamp(20px,4vw,48px)", background: "#0a0a0a" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "clamp(14px,2vw,20px)" }} className="services-grid">
           {SERVICES.map((s, i) => (
-            <Reveal key={s.num} delay={i * 90}>
+            <Reveal key={s.num} delay={i * 80}>
               <div
                 onClick={() => setActive(active === i ? null : i)}
                 style={{
-                  border: `1px solid ${active === i ? "rgba(255,210,0,.5)" : "rgba(255,255,255,.07)"}`,
-                  borderRadius: 12, padding: "clamp(24px,3vw,36px)",
-                  background: active === i ? "rgba(255,210,0,.04)" : "rgba(255,255,255,.02)",
+                  border: `1px solid ${active === i ? "rgba(255,210,0,.45)" : "rgba(255,255,255,.07)"}`,
+                  borderRadius: 14, padding: "clamp(24px,3vw,36px)",
+                  background: active === i ? "rgba(255,210,0,.035)" : "rgba(255,255,255,.018)",
                   cursor: "pointer", position: "relative", overflow: "hidden",
                   transition: "all .3s ease",
-                  boxShadow: active === i ? "0 20px 60px rgba(255,210,0,.08)" : "none",
+                  boxShadow: active === i ? "0 24px 64px rgba(255,210,0,.07)" : "none",
                 }}
-                onMouseOver={e => { if (active !== i) { e.currentTarget.style.borderColor = "rgba(255,210,0,.25)"; e.currentTarget.style.transform = "translateY(-3px)"; } }}
-                onMouseOut={e => { if (active !== i) { e.currentTarget.style.borderColor = "rgba(255,255,255,.07)"; e.currentTarget.style.transform = "none"; } }}
+                onMouseOver={e => { if (active !== i) { e.currentTarget.style.borderColor = "rgba(255,210,0,.22)"; e.currentTarget.style.transform = "translateY(-3px)"; e.currentTarget.style.boxShadow = "0 16px 48px rgba(0,0,0,.3)"; } }}
+                onMouseOut={e => { if (active !== i) { e.currentTarget.style.borderColor = "rgba(255,255,255,.07)"; e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; } }}
               >
-                {/* Number */}
-                <div style={{ position: "absolute", top: 16, right: 20, fontWeight: 900, fontSize: "5rem", color: "rgba(255,255,255,.03)", lineHeight: 1, userSelect: "none" }}>{s.num}</div>
+                {/* Ghost number */}
+                <div style={{ position: "absolute", top: 12, right: 20, fontWeight: 900, fontSize: "5.5rem", color: "rgba(255,255,255,.025)", lineHeight: 1, userSelect: "none", fontVariantNumeric: "tabular-nums" }}>{s.num}</div>
 
                 {/* Tag */}
-                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,210,0,.08)", border: "1px solid rgba(255,210,0,.2)", borderRadius: 20, padding: "4px 12px", marginBottom: 18 }}>
-                  <span style={{ color: "#FFD200", fontSize: ".66rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase" }}>{s.tag}</span>
+                <div style={{ display: "inline-flex", alignItems: "center", gap: 6, background: "rgba(255,210,0,.07)", border: "1px solid rgba(255,210,0,.18)", borderRadius: 20, padding: "4px 12px", marginBottom: 20 }}>
+                  <span style={{ color: "#FFD200", fontSize: ".64rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase" }}>{s.tag}</span>
                 </div>
 
-                <div style={{ display: "flex", alignItems: "flex-start", gap: 14, marginBottom: 14 }}>
-                  <span style={{ fontSize: "1.8rem" }}>{s.icon}</span>
-                  <h3 style={{ fontSize: "clamp(.95rem,2vw,1.1rem)", fontWeight: 800, color: "#fff", lineHeight: 1.25 }}>{s.title}</h3>
+                {/* Icon + Title */}
+                <div style={{ display: "flex", alignItems: "flex-start", gap: 14, marginBottom: 16 }}>
+                  <div style={{ width: 46, height: 46, borderRadius: 10, background: "rgba(255,210,0,.07)", border: "1px solid rgba(255,210,0,.14)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <ServiceIcon num={s.num} />
+                  </div>
+                  <h3 style={{ fontSize: "clamp(1rem,2vw,1.15rem)", fontWeight: 800, color: "#fff", lineHeight: 1.25, marginTop: 6, letterSpacing: "-.01em" }}>{s.title}</h3>
                 </div>
 
-                <p style={{ color: "rgba(255,255,255,.45)", fontSize: ".87rem", lineHeight: 1.75, marginBottom: 18 }}>{s.desc}</p>
+                {/* Description */}
+                <p style={{ color: "rgba(255,255,255,.42)", fontSize: ".87rem", lineHeight: 1.8, marginBottom: 16 }}>{s.desc}</p>
 
-                {/* Expandable details */}
-                <div style={{ maxHeight: active === i ? 200 : 0, overflow: "hidden", transition: "max-height .4s ease" }}>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,.07)", paddingTop: 16, marginBottom: 16 }}>
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+                {/* Expandable: desc2 + details */}
+                <div style={{ maxHeight: active === i ? 260 : 0, overflow: "hidden", transition: "max-height .45s ease" }}>
+                  <p style={{ color: "rgba(255,255,255,.38)", fontSize: ".85rem", lineHeight: 1.8, marginBottom: 16, paddingTop: 4 }}>{s.desc2}</p>
+                  <div style={{ borderTop: "1px solid rgba(255,255,255,.06)", paddingTop: 14, marginBottom: 6 }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 12px" }}>
                       {s.details.map(d => (
-                        <div key={d} style={{ display: "flex", alignItems: "center", gap: 8, fontSize: ".8rem", color: "rgba(255,255,255,.5)" }}>
+                        <div key={d} style={{ display: "flex", alignItems: "center", gap: 9, fontSize: ".8rem", color: "rgba(255,255,255,.45)", fontWeight: 500 }}>
                           <div style={{ width: 5, height: 5, borderRadius: "50%", background: "#FFD200", flexShrink: 0 }} />{d}
                         </div>
                       ))}
@@ -154,12 +191,18 @@ export default function Services() {
                   </div>
                 </div>
 
-                <div style={{ borderTop: "1px solid rgba(255,255,255,.06)", paddingTop: 14 }}>
-                  <div style={{ fontSize: ".74rem", color: "rgba(255,255,255,.3)" }}>
-                    <span style={{ color: "rgba(255,255,255,.5)", fontWeight: 600 }}>Pour : </span>{s.for}
+                {/* Footer */}
+                <div style={{ borderTop: "1px solid rgba(255,255,255,.05)", paddingTop: 14, marginTop: 4 }}>
+                  <div style={{ fontSize: ".74rem", color: "rgba(255,255,255,.28)", marginBottom: 4 }}>
+                    <span style={{ color: "rgba(255,255,255,.45)", fontWeight: 600 }}>Pour : </span>{s.for}
                   </div>
-                  <div style={{ fontSize: ".72rem", color: "#FFD200", marginTop: 10, fontWeight: 600 }}>
-                    {active === i ? "▲ Réduire" : "▼ En savoir plus"}
+                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginTop: 10 }}>
+                    <div style={{ fontSize: ".72rem", color: "rgba(255,255,255,.28)", fontStyle: "italic" }}>
+                      Objectif : {s.goal}
+                    </div>
+                    <div style={{ fontSize: ".72rem", color: "#FFD200", fontWeight: 700, letterSpacing: ".05em" }}>
+                      {active === i ? "▲ Réduire" : "▼ Détails"}
+                    </div>
                   </div>
                 </div>
 
@@ -172,37 +215,35 @@ export default function Services() {
       </section>
 
       {/* ══ PROCESSUS ══ */}
-      <section style={{ padding: "clamp(48px,8vw,90px) clamp(20px,4vw,48px)", background: "#0d0d0d", borderTop: "1px solid rgba(255,255,255,.05)" }}>
+      <section style={{ padding: "clamp(56px,9vw,100px) clamp(20px,4vw,48px)", background: "#0d0d0d", borderTop: "1px solid rgba(255,255,255,.05)" }}>
         <div style={{ maxWidth: 1140, margin: "0 auto" }}>
           <Reveal>
-            <div style={{ textAlign: "center", marginBottom: "clamp(36px,6vw,56px)" }}>
-              <div style={{ color: "#FFD200", fontSize: ".7rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14 }}>Méthode</div>
-              <h2 style={{ fontSize: "clamp(2rem,5vw,3rem)", fontWeight: 900, letterSpacing: "-.03em", color: "#fff", lineHeight: 1.05 }}>
+            <div style={{ textAlign: "center", marginBottom: "clamp(44px,7vw,64px)" }}>
+              <div style={{ display: "inline-block", color: "#FFD200", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16, padding: "4px 14px", border: "1px solid rgba(255,210,0,.2)", borderRadius: 20 }}>Méthode</div>
+              <h2 style={{ fontSize: "clamp(2.2rem,5vw,3.2rem)", fontWeight: 900, letterSpacing: "-.03em", color: "#fff", lineHeight: 1.05, marginTop: 14 }}>
                 Comment ça <span style={{ color: "#FFD200" }}>fonctionne ?</span>
               </h2>
             </div>
           </Reveal>
 
           <div style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)", gap: "clamp(12px,2vw,20px)", position: "relative" }} className="process-grid">
-            {/* Connector line */}
-            <div style={{ position: "absolute", top: 28, left: "12.5%", right: "12.5%", height: 1, background: "linear-gradient(90deg, #FFD200, rgba(255,210,0,.2), rgba(255,210,0,.2), #FFD200)", zIndex: 0, display: "none" }} className="connector" />
-
             {PROCESS.map((p, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div style={{ textAlign: "center", position: "relative", zIndex: 1 }}>
                   <div style={{
                     width: 56, height: 56, borderRadius: "50%",
                     background: i === 0 ? "#FFD200" : "rgba(255,255,255,.04)",
-                    border: i === 0 ? "none" : "1px solid rgba(255,255,255,.1)",
+                    border: i === 0 ? "none" : "1px solid rgba(255,255,255,.09)",
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    margin: "0 auto 18px",
-                    fontWeight: 900, fontSize: "1rem",
-                    color: i === 0 ? "#0a0a0a" : "rgba(255,255,255,.35)",
+                    margin: "0 auto 20px",
+                    fontWeight: 900, fontSize: ".95rem",
+                    color: i === 0 ? "#0a0a0a" : "rgba(255,255,255,.3)",
+                    fontVariantNumeric: "tabular-nums",
                   }}>
                     {p.n}
                   </div>
-                  <h4 style={{ fontWeight: 800, fontSize: ".92rem", color: "#fff", marginBottom: 10 }}>{p.t}</h4>
-                  <p style={{ color: "rgba(255,255,255,.38)", fontSize: ".82rem", lineHeight: 1.7 }}>{p.d}</p>
+                  <h4 style={{ fontWeight: 800, fontSize: ".92rem", color: "#fff", marginBottom: 12, letterSpacing: "-.01em" }}>{p.t}</h4>
+                  <p style={{ color: "rgba(255,255,255,.35)", fontSize: ".82rem", lineHeight: 1.75 }}>{p.d}</p>
                 </div>
               </Reveal>
             ))}
@@ -211,18 +252,18 @@ export default function Services() {
       </section>
 
       {/* ══ BOTTOM CTA ══ */}
-      <section style={{ padding: "clamp(48px,8vw,80px) clamp(20px,4vw,48px)", background: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,.05)", textAlign: "center" }}>
+      <section style={{ padding: "clamp(56px,9vw,90px) clamp(20px,4vw,48px)", background: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,.05)", textAlign: "center" }}>
         <Reveal>
-          <div style={{ color: "#FFD200", fontSize: ".7rem", fontWeight: 700, letterSpacing: ".18em", textTransform: "uppercase", marginBottom: 14 }}>Urgence ?</div>
-          <h2 style={{ fontSize: "clamp(1.8rem,4vw,2.8rem)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff", marginBottom: 16 }}>
-            Besoin d'un contrôle rapide ?
+          <div style={{ display: "inline-block", color: "#FFD200", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".2em", textTransform: "uppercase", marginBottom: 16, padding: "4px 14px", border: "1px solid rgba(255,210,0,.2)", borderRadius: 20 }}>Prendre contact</div>
+          <h2 style={{ fontSize: "clamp(1.9rem,4.5vw,3rem)", fontWeight: 900, letterSpacing: "-.02em", color: "#fff", marginBottom: 16, marginTop: 14 }}>
+            Besoin d'un contrôle ?
           </h2>
-          <p style={{ color: "rgba(255,255,255,.4)", fontSize: ".95rem", marginBottom: 32 }}>
-            Vente, sinistre ou demande des autorités — traitement prioritaire et rapport express.
+          <p style={{ color: "rgba(255,255,255,.38)", fontSize: ".95rem", marginBottom: 36, maxWidth: 440, margin: "0 auto 36px" }}>
+            Vente, rénovation, demande des autorités — nous intervenons sur toute la Suisse romande.
           </p>
           <button onClick={() => navigate("/contact")} style={{
             background: "#FFD200", color: "#0a0a0a", border: "none",
-            padding: "15px 36px", borderRadius: 6,
+            padding: "16px 38px", borderRadius: 6,
             fontFamily: "inherit", fontWeight: 800, fontSize: ".88rem",
             cursor: "pointer", letterSpacing: ".07em", textTransform: "uppercase", transition: "all .25s",
           }}

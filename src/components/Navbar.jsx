@@ -1,58 +1,20 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import logoImg from "../assets/image.png";
 
-/* Logo BM| fidèle au design de la marque */
 function Logo() {
   return (
-    <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');
-      `}</style>
-
-      {/* Monogramme BM| */}
-      <div style={{ display: "flex", alignItems: "center", lineHeight: 1 }}>
-        <span style={{
-          fontFamily: "'Rajdhani', sans-serif",
-          fontWeight: 700,
-          fontSize: "clamp(1.5rem, 3vw, 2rem)",
-          color: "#fff",
-          letterSpacing: "-.02em",
-          lineHeight: 1,
-        }}>BM</span>
-        {/* Barre rouge verticale */}
-        <div style={{
-          width: 4,
-          height: "clamp(1.6rem, 3.2vw, 2.1rem)",
-          marginLeft: 4,
-          borderRadius: 2,
-          background: "linear-gradient(to bottom, #E63946, #8b1c26)",
-          flexShrink: 0,
-        }} />
-      </div>
-
-      {/* Texte à droite */}
-      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <div style={{
-          fontFamily: "'Rajdhani', sans-serif",
-          fontWeight: 700,
-          fontSize: "clamp(.65rem, 1.2vw, .8rem)",
-          letterSpacing: ".18em",
-          color: "#fff",
-          textTransform: "uppercase",
-          lineHeight: 1.1,
-        }}>
-          BORGES MONTEIRO
-        </div>
-        <div style={{
-          fontSize: "clamp(.42rem, .8vw, .5rem)",
-          letterSpacing: ".22em",
-          color: "rgba(255,255,255,.45)",
-          textTransform: "uppercase",
-          marginTop: 2,
-        }}>
-          CONTRÔLE ÉLECTRIQUE
-        </div>
-      </div>
+    <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
+      <img
+        src={logoImg}
+        alt="Borges Monteiro"
+        style={{
+          height: "clamp(40px, 5.5vw, 56px)",
+          width: "auto",
+          display: "block",
+          mixBlendMode: "screen",
+        }}
+      />
     </NavLink>
   );
 }
@@ -81,7 +43,7 @@ export default function Navbar() {
       backdropFilter: solid ? "blur(20px)" : "none",
       borderBottom: solid ? "1px solid rgba(255,255,255,.06)" : "none",
       transition: "all .35s ease",
-      padding: solid ? "12px 0" : "22px 0",
+      padding: solid ? "10px 0" : "18px 0",
     }}>
       <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 clamp(20px,4vw,48px)", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
