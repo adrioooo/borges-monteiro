@@ -15,7 +15,7 @@ function Footer() {
           <img
             src="/logo.png"
             alt="Borges Monteiro"
-            style={{ height: 44, width: "auto", mixBlendMode: "screen", display: "block" }}
+            style={{ height: 58, width: "auto", mixBlendMode: "screen", display: "block" }}
           />
         </NavLink>
         <div style={{ display: "flex", gap: 24 }}>

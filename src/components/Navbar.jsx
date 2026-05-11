@@ -8,7 +8,7 @@ function Logo() {
         src="/logo.png"
         alt="Borges Monteiro"
         style={{
-          height: "clamp(40px, 5.5vw, 56px)",
+          height: "clamp(52px, 7vw, 72px)",
           width: "auto",
           display: "block",
           mixBlendMode: "screen",
