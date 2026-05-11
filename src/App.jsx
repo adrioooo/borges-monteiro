@@ -1,6 +1,5 @@
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import { NavLink } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Accueil from "./pages/Accueil";
 import Services from "./pages/Services";
@@ -21,12 +20,12 @@ function Footer() {
         </NavLink>
         <div style={{ display: "flex", gap: 24 }}>
           {[["/","Accueil"],["/services","Services"],["/contact","Contact"]].map(([path, label]) => (
-            <a key={path} href={path} style={{ color: location.pathname === path ? "#FFD200" : "rgba(255,255,255,.3)", fontSize: ".82rem", textDecoration: "none", transition: "color .2s" }}
+            <NavLink key={path} to={path} end style={({ isActive }) => ({ color: isActive ? "#FFD200" : "rgba(255,255,255,.3)", fontSize: ".82rem", textDecoration: "none", transition: "color .2s" })}
               onMouseOver={e => e.target.style.color = "#FFD200"}
-              onMouseOut={e => e.target.style.color = location.pathname === path ? "#FFD200" : "rgba(255,255,255,.3)"}
+              onMouseOut={e => { /* handled by NavLink active state */ }}
             >
               {label}
-            </a>
+            </NavLink>
           ))}
         </div>
         <div style={{ color: "rgba(255,255,255,.2)", fontSize: ".74rem" }}>
