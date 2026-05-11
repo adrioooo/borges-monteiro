@@ -26,7 +26,7 @@ const InfoIcon = ({ id }) => {
   }
 };
 
-const FORMSPREE_ID = "YOUR_FORM_ID"; // 👉 Remplacer après création sur formspree.io
+const FORMSPREE_ID = "mqenwrbk";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", property: "", message: "" });
