@@ -3,17 +3,16 @@ import { NavLink, useLocation } from "react-router-dom";
 
 function Logo() {
   return (
-    <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center" }}>
-      <img
-        src="/logo.png"
-        alt="Borges Monteiro"
-        style={{
-          height: "clamp(52px, 7vw, 72px)",
-          width: "auto",
-          display: "block",
-          mixBlendMode: "screen",
-        }}
-      />
+    <NavLink to="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: 10 }}>
+      <style>{`@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&display=swap');`}</style>
+      <div style={{ display: "flex", alignItems: "center", lineHeight: 1 }}>
+        <span style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "clamp(1.5rem,3vw,2rem)", color: "#fff", letterSpacing: "-.02em", lineHeight: 1 }}>BM</span>
+        <div style={{ width: 4, height: "clamp(1.6rem,3.2vw,2.1rem)", marginLeft: 4, borderRadius: 2, background: "linear-gradient(to bottom, #E63946, #8b1c26)", flexShrink: 0 }} />
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div style={{ fontFamily: "'Rajdhani', sans-serif", fontWeight: 700, fontSize: "clamp(.65rem,1.2vw,.8rem)", letterSpacing: ".18em", color: "#fff", textTransform: "uppercase", lineHeight: 1.1 }}>BORGES MONTEIRO</div>
+        <div style={{ fontSize: "clamp(.42rem,.8vw,.5rem)", letterSpacing: ".22em", color: "rgba(255,255,255,.45)", textTransform: "uppercase", marginTop: 2 }}>CONTRÔLE ÉLECTRIQUE</div>
+      </div>
     </NavLink>
   );
 }
