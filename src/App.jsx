@@ -11,9 +11,6 @@ function Footer() {
   return (
     <footer style={{ background: "#060606", borderTop: "1px solid rgba(255,255,255,.05)", padding: "clamp(24px,3vw,36px) clamp(20px,4vw,48px)" }}>
       <div style={{ maxWidth: 1140, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-        <NavLink to="/" style={{ textDecoration: "none" }}>
-          <img src="/logo.png" alt="Borges Monteiro" style={{ height: 72, width: "auto", display: "block", mixBlendMode: "screen" }} />
-        </NavLink>
         <div style={{ display: "flex", gap: 24 }}>
           {[["/","Accueil"],["/services","Services"],["/contact","Contact"]].map(([path, label]) => (
             <NavLink key={path} to={path} end style={({ isActive }) => ({ color: isActive ? "#FFD200" : "rgba(255,255,255,.3)", fontSize: ".82rem", textDecoration: "none", transition: "color .2s" })}

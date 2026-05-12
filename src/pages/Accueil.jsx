@@ -169,7 +169,7 @@ export default function Accueil() {
         <div style={{ height: 2, background: "linear-gradient(90deg, transparent 5%, #FFD200 35%, #FFD200 65%, transparent 95%)" }} />
         <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 clamp(20px,4vw,48px)", display: "grid", gridTemplateColumns: "repeat(3,1fr)" }} className="stats-grid">
           <Stat val={500} suffix="+" label="Contrôles réalisés" delay={0} />
-          <Stat val={100} suffix="%" label="Satisfaction client"  delay={120} />
+          <Stat val={100} suffix="%" label="Votre sécurité, notre priorité"  delay={120} />
           <Stat val={5}   suffix="+" label="Ans d'expérience"    delay={240} last />
         </div>
       </section>

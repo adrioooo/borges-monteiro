@@ -29,7 +29,7 @@ const InfoIcon = ({ id }) => {
 const FORMSPREE_ID = "mqenwrbk";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", property: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", service: "", property: "", address: "", locality: "", message: "" });
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -55,12 +55,14 @@ export default function Contact() {
           Téléphone: form.phone || "—",
           Service: form.service || "—",
           "Type de bien": form.property || "—",
+          "Adresse du bien": form.address || "—",
+          "NPA / Localité": form.locality || "—",
           Message: form.message,
         }),
       });
       if (res.ok) {
         setSent(true);
-        setForm({ name: "", email: "", phone: "", service: "", property: "", message: "" });
+        setForm({ name: "", email: "", phone: "", service: "", property: "", address: "", locality: "", message: "" });
       } else {
         setError(true);
       }
@@ -181,7 +183,7 @@ export default function Contact() {
                       onFocus={e => { e.target.style.borderColor = "#FFD200"; }}
                       onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,.09)"; }}>
                       <option value="" style={{ background: "#1a1a1a" }}>Choisir…</option>
-                      {["Contrôle périodique","Contrôle final","Contrôle de réception"].map(o => (
+                      {["Contrôle périodique","Contrôle final","Contrôle de réception","Changement de propriétaire"].map(o => (
                         <option key={o} style={{ background: "#1a1a1a" }}>{o}</option>
                       ))}
                     </select>
@@ -189,16 +191,25 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label style={LABEL}>Type de bien immobilier</label>
-                  <select value={form.property} onChange={e => setForm({ ...form, property: e.target.value })}
-                    style={{ ...INPUT, color: form.property ? "#fff" : "rgba(255,255,255,.28)", cursor: "pointer" }}
-                    onFocus={e => { e.target.style.borderColor = "#FFD200"; }}
-                    onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,.09)"; }}>
-                    <option value="" style={{ background: "#1a1a1a" }}>Choisir…</option>
-                    {["Appartement","Maison individuelle","Villa","Immeuble (PPE / locatif)","Local commercial","Bâtiment industriel","Autre"].map(o => (
-                      <option key={o} style={{ background: "#1a1a1a" }}>{o}</option>
-                    ))}
-                  </select>
+                  <label style={LABEL}>Type de bien</label>
+                  <input placeholder="Ex. appartement, villa, local commercial…" value={form.property}
+                    onChange={e => setForm({ ...form, property: e.target.value })}
+                    style={INPUT} onFocus={onFocus} onBlur={onBlur} />
+                </div>
+
+                <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 14 }}>
+                  <div>
+                    <label style={LABEL}>Adresse du bien</label>
+                    <input placeholder="Rue et numéro" value={form.address}
+                      onChange={e => setForm({ ...form, address: e.target.value })}
+                      style={INPUT} onFocus={onFocus} onBlur={onBlur} />
+                  </div>
+                  <div>
+                    <label style={LABEL}>NPA / Localité</label>
+                    <input placeholder="1000 Lausanne" value={form.locality}
+                      onChange={e => setForm({ ...form, locality: e.target.value })}
+                      style={INPUT} onFocus={onFocus} onBlur={onBlur} />
+                  </div>
                 </div>
 
                 <div>
