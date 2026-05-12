@@ -7,7 +7,7 @@ function Logo() {
       <img
         src="/logo.png"
         alt="Borges Monteiro"
-        style={{ height: "clamp(64px, 8vw, 88px)", width: "auto", display: "block", mixBlendMode: "screen" }}
+        style={{ height: "clamp(90px, 12vw, 140px)", width: "auto", display: "block" }}
       />
     </NavLink>
   );
