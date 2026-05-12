@@ -106,9 +106,9 @@ export default function Accueil() {
           position: "absolute", inset: 0,
           backgroundImage: `url(${heroImg})`,
           backgroundSize: "cover", backgroundPosition: "center 40%",
-          filter: "brightness(.82)", transform: "scale(1.03)",
+          filter: "brightness(.95)", transform: "scale(1.03)",
         }} />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(6,6,6,.94) 0%, rgba(6,6,6,.68) 44%, rgba(6,6,6,.1) 100%)" }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(105deg, rgba(6,6,6,.82) 0%, rgba(6,6,6,.52) 44%, rgba(6,6,6,.05) 100%)" }} />
         <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, height: "32%", background: "linear-gradient(to top, #0a0a0a, transparent)" }} />
         <div style={{ position: "absolute", left: 0, top: 0, bottom: 0, width: 3, background: "linear-gradient(to bottom, transparent 5%, #FFD200 28%, #FFD200 72%, transparent 95%)" }} />
 
