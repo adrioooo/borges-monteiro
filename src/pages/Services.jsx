@@ -28,6 +28,7 @@ function ServiceIcon({ num }) {
     case "01": return <svg {...p}><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>;
     case "02": return <svg {...p}><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><path d="M9 22V12h6v10"/></svg>;
     case "03": return <svg {...p}><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg>;
+    case "04": return <svg {...p}><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>;
     default:   return <svg {...p}><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg>;
   }
 }
@@ -57,6 +58,14 @@ const SERVICES = [
     goal: "Garantir une conformité indépendante",
     details: ["Organisme tiers indépendant", "Rapport objectif certifié", "Sans conflit d'intérêt", "Valide pour les autorités"],
   },
+  {
+    num: "04", title: "Changement de propriétaire", tag: "Vente / Transfert",
+    desc: "Lors d'une vente immobilière, la loi exige un contrôle électrique de l'installation. Nous intervenons rapidement pour établir le rapport OIBT nécessaire à la transaction.",
+    desc2: "Ce contrôle permet de s'assurer que l'installation électrique est conforme avant le transfert de propriété. Le rapport est remis dans les délais requis pour l'acte notarié.",
+    for: "Vendeurs · Acheteurs · Notaires",
+    goal: "Assurer la conformité lors d'un transfert de propriété",
+    details: ["Contrôle OIBT obligatoire", "Rapport remis rapidement", "Valide pour acte notarié", "Suivi personnalisé"],
+  },
 ];
 
 const PROCESS = [
@@ -82,9 +91,6 @@ export default function Services() {
       <style>{`
         .svc-card:not(.active):hover { border-color: rgba(255,210,0,.28) !important; transform: translateY(-3px); box-shadow: 0 20px 56px rgba(0,0,0,.3) !important; }
         .svc-card.active { border-color: rgba(255,210,0,.5) !important; background: rgba(255,210,0,.035) !important; box-shadow: 0 24px 64px rgba(255,210,0,.07) !important; transform: none !important; }
-        @media (max-width: 1000px) {
-          .services-grid { grid-template-columns: repeat(2,1fr) !important; }
-        }
         @media (max-width: 640px) {
           .services-grid { grid-template-columns: 1fr !important; }
         }
@@ -120,7 +126,7 @@ export default function Services() {
 
       {/* ══ CARDS ══ */}
       <section style={{ padding: "clamp(56px,9vw,100px) clamp(20px,4vw,48px)", background: "#0a0a0a" }}>
-        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(12px,2vw,18px)" }} className="services-grid">
+        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "clamp(12px,2vw,18px)" }} className="services-grid">
           {SERVICES.map((s, i) => (
             <Reveal key={s.num} delay={i * 80}>
               <div
