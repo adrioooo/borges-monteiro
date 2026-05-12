@@ -206,7 +206,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <label style={LABEL}>NPA / Localité</label>
-                    <input placeholder="1000 Lausanne" value={form.locality}
+                    <input placeholder="1700 Fribourg" value={form.locality}
                       onChange={e => setForm({ ...form, locality: e.target.value })}
                       style={INPUT} onFocus={onFocus} onBlur={onBlur} />
                   </div>
