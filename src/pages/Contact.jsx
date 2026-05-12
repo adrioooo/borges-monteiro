@@ -214,7 +214,7 @@ export default function Contact() {
 
                 <div>
                   <label style={LABEL}>Message</label>
-                  <textarea rows={5} placeholder="Décrivez votre installation, la surface, votre situation…"
+                  <textarea rows={5} placeholder="Décrivez votre demande…"
                     value={form.message} onChange={e => setForm({ ...form, message: e.target.value })}
                     style={{ ...INPUT, resize: "vertical" }}
                     onFocus={onFocus} onBlur={onBlur} />
