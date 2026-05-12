@@ -75,7 +75,7 @@ const WHY = [
   { id: "shield", title: "Agréé ESTI",         desc: "Autorisation officielle de contrôle électrique en Suisse." },
   { id: "doc",    title: "Rapport officiel",    desc: "Document certifié remis après chaque intervention." },
   { id: "clock",  title: "Réactivité",          desc: "Planifié rapidement sur toute la Suisse romande." },
-  { id: "check",  title: "Conformité garantie", desc: "Chaque contrôle respecte les normes OIBT en vigueur." },
+  { id: "check",  title: "Conformité garantie", desc: "Chaque contrôle respecte les normes et ordonnances OIBT en vigueur." },
   { id: "chat",   title: "Conseil inclus",      desc: "Nous vous expliquons chaque étape clairement." },
 ];
 
@@ -165,8 +165,8 @@ export default function Accueil() {
         <div style={{ height: 2, background: "linear-gradient(90deg, transparent 5%, #FFD200 35%, #FFD200 65%, transparent 95%)" }} />
         <div style={{ maxWidth: 1140, margin: "0 auto", padding: "0 clamp(20px,4vw,48px)", display: "grid", gridTemplateColumns: "repeat(3,1fr)" }} className="stats-grid">
           <Stat val={500} suffix="+" label="Contrôles réalisés" delay={0} />
-          <Stat val={100} suffix="%" label="Clients satisfaits"  delay={120} />
-          <Stat val={15}  suffix="+" label="Ans d'expérience"    delay={240} last />
+          <Stat val={100} suffix="%" label="Votre satisfaction, notre priorité"  delay={120} />
+          <Stat val={5}   suffix="+" label="Ans d'expérience"    delay={240} last />
         </div>
       </section>
 
@@ -226,7 +226,7 @@ export default function Accueil() {
               <div style={{ position: "absolute", right: "9%", bottom: "-65%", width: "20%", aspectRatio: "1", background: "rgba(0,0,0,.04)", borderRadius: "50%" }} />
               <div style={{ position: "relative" }}>
                 <h3 style={{ fontSize: "clamp(1.4rem,3vw,2rem)", fontWeight: 900, color: "#0a0a0a", letterSpacing: "-.025em", marginBottom: 8 }}>Prêt à sécuriser votre installation ?</h3>
-                <p style={{ color: "rgba(0,0,0,.45)", fontSize: ".88rem", fontWeight: 500 }}>Devis gratuit · Réponse sous 24h · Sans engagement</p>
+                <p style={{ color: "rgba(0,0,0,.45)", fontSize: ".88rem", fontWeight: 500 }}>Gratuit · Sans engagement · Réponse sous 48h</p>
               </div>
               <button onClick={() => navigate("/contact")} style={{
                 flexShrink: 0, background: "#0a0a0a", color: "#FFD200", border: "none",

@@ -104,7 +104,7 @@ export default function Contact() {
             Demandez votre<br /><span style={{ color: "#FFD200" }}>devis gratuit</span>
           </h1>
           <p style={{ color: "rgba(255,255,255,.38)", fontSize: "clamp(.9rem,1.8vw,1.05rem)", lineHeight: 1.85 }}>
-            Gratuit · Sans engagement · Réponse sous 24h
+            Gratuit · Sans engagement · Réponse sous 48h
           </p>
         </div>
       </section>
@@ -148,7 +148,7 @@ export default function Contact() {
               <div style={{ textAlign: "center", padding: "clamp(48px,8vw,80px) 0" }}>
                 <div style={{ width: 64, height: 64, borderRadius: "50%", background: "rgba(255,210,0,.1)", border: "1px solid rgba(255,210,0,.3)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 24px", fontSize: "1.8rem" }}>✅</div>
                 <h3 style={{ fontWeight: 900, fontSize: "1.5rem", color: "#fff", marginBottom: 10, letterSpacing: "-.02em" }}>Message envoyé !</h3>
-                <p style={{ color: "rgba(255,255,255,.35)", fontSize: ".9rem" }}>Nous vous répondrons sous 24 heures.</p>
+                <p style={{ color: "rgba(255,255,255,.35)", fontSize: ".9rem" }}>Nous vous répondrons sous 48 heures.</p>
               </div>
             ) : (
               <form onSubmit={submit} style={{ display: "flex", flexDirection: "column", gap: 14 }}>
@@ -181,7 +181,7 @@ export default function Contact() {
                       onFocus={e => { e.target.style.borderColor = "#FFD200"; }}
                       onBlur={e => { e.target.style.borderColor = "rgba(255,255,255,.09)"; }}>
                       <option value="" style={{ background: "#1a1a1a" }}>Choisir…</option>
-                      {["Contrôle périodique OIBT","Contrôle final","Contrôle de réception","Conseil conformité"].map(o => (
+                      {["Contrôle périodique","Contrôle final","Contrôle de réception"].map(o => (
                         <option key={o} style={{ background: "#1a1a1a" }}>{o}</option>
                       ))}
                     </select>
@@ -226,7 +226,7 @@ export default function Contact() {
                 >{loading ? "Envoi en cours…" : "Envoyer ma demande →"}</button>
 
                 <p style={{ textAlign: "center", color: "rgba(255,255,255,.15)", fontSize: ".68rem", marginTop: 2 }}>
-                  Données confidentielles · Réponse sous 24h · Sans engagement
+                  Données confidentielles · Réponse sous 48h · Sans engagement
                 </p>
               </form>
             )}

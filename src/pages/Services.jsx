@@ -34,7 +34,7 @@ function ServiceIcon({ num }) {
 
 const SERVICES = [
   {
-    num: "01", title: "Contrôle périodique OIBT", tag: "Obligation légale",
+    num: "01", title: "Contrôle périodique", tag: "Obligation légale",
     desc: "Le contrôle périodique OIBT est une obligation légale visant à garantir la sécurité des installations électriques dans le temps. Il concerne aussi bien les habitations privées que les bâtiments commerciaux ou industriels.",
     desc2: "Nous effectuons une vérification complète de votre installation afin de détecter toute anomalie ou usure pouvant représenter un danger. À l'issue du contrôle, vous recevez un rapport détaillé ainsi que les recommandations nécessaires pour une mise en conformité.",
     for: "Propriétaires · Gérances · Entreprises",
@@ -56,14 +56,6 @@ const SERVICES = [
     for: "Maîtres d'ouvrage · Promoteurs",
     goal: "Garantir une conformité indépendante",
     details: ["Organisme tiers indépendant", "Rapport objectif certifié", "Sans conflit d'intérêt", "Valide pour les autorités"],
-  },
-  {
-    num: "04", title: "Conseil pour mise en conformité", tag: "Sur mesure",
-    desc: "En cas de non-conformité, nous vous accompagnons avec des solutions claires et adaptées pour corriger les défauts relevés.",
-    desc2: "Nous vous expliquons les travaux nécessaires et vous orientons vers les meilleures options pour sécuriser votre installation tout en optimisant les coûts.",
-    for: "Installations anciennes ou non conformes",
-    goal: "Sécuriser et régulariser votre installation",
-    details: ["Analyse des défauts", "Plan de correction", "Priorisation des travaux", "Suivi jusqu'à conformité"],
   },
 ];
 
@@ -153,9 +145,9 @@ export default function Services() {
                 <p style={{ color: "rgba(255,255,255,.4)", fontSize: ".87rem", lineHeight: 1.82, marginBottom: 16 }}>{s.desc}</p>
 
                 {/* Expandable */}
-                <div style={{ maxHeight: active === i ? 280 : 0, overflow: "hidden", transition: "max-height .45s ease" }}>
+                <div style={{ maxHeight: active === i ? 340 : 0, overflow: "hidden", transition: "max-height .45s ease" }}>
                   <p style={{ color: "rgba(255,255,255,.35)", fontSize: ".85rem", lineHeight: 1.82, marginBottom: 16 }}>{s.desc2}</p>
-                  <div style={{ borderTop: "1px solid rgba(255,255,255,.06)", paddingTop: 14, marginBottom: 4 }}>
+                  <div style={{ borderTop: "1px solid rgba(255,255,255,.06)", paddingTop: 14, marginBottom: 16 }}>
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px 12px" }}>
                       {s.details.map(d => (
                         <div key={d} style={{ display: "flex", alignItems: "center", gap: 9, fontSize: ".79rem", color: "rgba(255,255,255,.42)", fontWeight: 500 }}>
@@ -164,6 +156,15 @@ export default function Services() {
                       ))}
                     </div>
                   </div>
+                  <button onClick={(e) => { e.stopPropagation(); navigate("/contact"); }} style={{
+                    background: "#FFD200", color: "#0a0a0a", border: "none",
+                    padding: "10px 22px", borderRadius: 7,
+                    fontFamily: "inherit", fontWeight: 800, fontSize: ".78rem",
+                    cursor: "pointer", letterSpacing: ".08em", textTransform: "uppercase", transition: "all .25s",
+                  }}
+                    onMouseOver={e => { e.currentTarget.style.transform = "translateY(-2px)"; e.currentTarget.style.boxShadow = "0 10px 28px rgba(255,210,0,.35)"; }}
+                    onMouseOut={e => { e.currentTarget.style.transform = "none"; e.currentTarget.style.boxShadow = "none"; }}
+                  >Demander un devis →</button>
                 </div>
 
                 {/* Footer */}
