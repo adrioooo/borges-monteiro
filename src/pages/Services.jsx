@@ -82,8 +82,10 @@ export default function Services() {
       <style>{`
         .svc-card:not(.active):hover { border-color: rgba(255,210,0,.28) !important; transform: translateY(-3px); box-shadow: 0 20px 56px rgba(0,0,0,.3) !important; }
         .svc-card.active { border-color: rgba(255,210,0,.5) !important; background: rgba(255,210,0,.035) !important; box-shadow: 0 24px 64px rgba(255,210,0,.07) !important; transform: none !important; }
-        @media (max-width: 860px) {
+        @media (max-width: 1000px) {
           .services-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 860px) {
           .process-grid  { grid-template-columns: repeat(2,1fr) !important; }
           .process-line  { display: none !important; }
         }
@@ -115,7 +117,7 @@ export default function Services() {
 
       {/* ══ CARDS ══ */}
       <section style={{ padding: "clamp(56px,9vw,100px) clamp(20px,4vw,48px)", background: "#0a0a0a" }}>
-        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: "clamp(12px,2vw,18px)" }} className="services-grid">
+        <div style={{ maxWidth: 1140, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "clamp(12px,2vw,18px)" }} className="services-grid">
           {SERVICES.map((s, i) => (
             <Reveal key={s.num} delay={i * 80}>
               <div
