@@ -83,6 +83,9 @@ export default function Services() {
         .svc-card:not(.active):hover { border-color: rgba(255,210,0,.28) !important; transform: translateY(-3px); box-shadow: 0 20px 56px rgba(0,0,0,.3) !important; }
         .svc-card.active { border-color: rgba(255,210,0,.5) !important; background: rgba(255,210,0,.035) !important; box-shadow: 0 24px 64px rgba(255,210,0,.07) !important; transform: none !important; }
         @media (max-width: 1000px) {
+          .services-grid { grid-template-columns: repeat(2,1fr) !important; }
+        }
+        @media (max-width: 640px) {
           .services-grid { grid-template-columns: 1fr !important; }
         }
         @media (max-width: 860px) {
