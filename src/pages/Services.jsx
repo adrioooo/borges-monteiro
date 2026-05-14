@@ -60,11 +60,11 @@ const SERVICES = [
   },
   {
     num: "04", title: "Changement de propriétaire", tag: "Vente / Transfert",
-    desc: "Lors d'une vente immobilière, la loi exige un contrôle électrique de l'installation. Nous intervenons rapidement pour établir le rapport OIBT nécessaire à la transaction.",
-    desc2: "Ce contrôle permet de s'assurer que l'installation électrique est conforme avant le transfert de propriété. Le rapport est remis dans les délais requis pour l'acte notarié.",
+    desc: "Selon l'interprétation officielle de l'ESTI, toute installation électrique soumise à un contrôle périodique de 10 ou 20 ans doit faire l'objet d'un contrôle lors d'un changement de propriétaire, lorsque le dernier contrôle remonte à plus de 5 ans.",
+    desc2: "La notion de « changement de propriétaire » comprend notamment la vente d'un bien immobilier, la donation, la succession, l'avancement d'hoirie, le partage successoral et le transfert entre copropriétaires.",
     for: "Vendeurs · Acheteurs · Notaires",
     goal: "Assurer la conformité lors d'un transfert de propriété",
-    details: ["Contrôle OIBT obligatoire", "Rapport remis rapidement", "Valide pour acte notarié", "Suivi personnalisé"],
+    details: ["Vente immobilière", "Donation", "Succession", "Avancement d'hoirie", "Partage successoral", "Transfert entre copropriétaires"],
   },
 ];
 
