@@ -226,8 +226,8 @@ export default function Accueil() {
               display: "flex", alignItems: "center", justifyContent: "space-between", gap: 24, flexWrap: "wrap",
               position: "relative", overflow: "hidden",
             }}>
-              <div style={{ position: "absolute", right: "-3%", top: "-55%", width: "30%", aspectRatio: "1", background: "rgba(0,0,0,.05)", borderRadius: "50%" }} />
-              <div style={{ position: "absolute", right: "9%", bottom: "-65%", width: "20%", aspectRatio: "1", background: "rgba(0,0,0,.04)", borderRadius: "50%" }} />
+              <div style={{ position: "absolute", right: "-3%", top: "-55%", width: "30%", aspectRatio: "1", background: "rgba(0,0,0,.05)", borderRadius: "50%", pointerEvents: "none" }} />
+              <div style={{ position: "absolute", right: "9%", bottom: "-65%", width: "20%", aspectRatio: "1", background: "rgba(0,0,0,.04)", borderRadius: "50%", pointerEvents: "none" }} />
               <div style={{ position: "relative" }}>
                 <h3 style={{ fontSize: "clamp(1.4rem,3vw,2rem)", fontWeight: 900, color: "#0a0a0a", letterSpacing: "-.025em", marginBottom: 8 }}>Prêt à sécuriser votre installation ?</h3>
                 <p style={{ color: "rgba(0,0,0,.45)", fontSize: ".88rem", fontWeight: 500 }}>Gratuit · Sans engagement · Réponse sous 48h</p>
