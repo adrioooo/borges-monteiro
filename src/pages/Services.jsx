@@ -242,7 +242,7 @@ export default function Services() {
             Besoin d'un contrôle ?
           </h2>
           <p style={{ color: "rgba(255,255,255,.35)", fontSize: ".93rem", maxWidth: 400, margin: "0 auto 36px", lineHeight: 1.8 }}>
-            Vente, rénovation, demande des autorités — nous intervenons sur toute la Suisse romande.
+            Vente, rénovation, demande des autorités — nous intervenons dans toute la Suisse romande.
           </p>
           <button onClick={() => navigate("/contact")} style={{
             background: "#FFD200", color: "#0a0a0a", border: "none",
