@@ -74,7 +74,7 @@ function WhyIcon({ id }) {
 const WHY = [
   { id: "shield", title: "Agréé ESTI",         desc: "Autorisation officielle de contrôle électrique en Suisse." },
   { id: "doc",    title: "Rapport officiel",    desc: "Document certifié remis après chaque intervention." },
-  { id: "clock",  title: "Réactivité",          desc: "Planifié rapidement sur toute la Suisse romande." },
+  { id: "clock",  title: "Réactivité",          desc: "Planifié rapidement dans toute la Suisse romande." },
   { id: "check",  title: "Conformité garantie", desc: "Chaque contrôle respecte les normes et ordonnances OIBT en vigueur." },
   { id: "chat",   title: "Conseil inclus",      desc: "Nous vous expliquons chaque étape clairement." },
 ];
